@@ -15,7 +15,8 @@ class MainActivity : AppCompatActivity() {
         recyclerView.layoutManager = GridLayoutManager(this, 2)
 
 
-        val arrayOfImages = intArrayOf()
+        val arrayOfImages = intArrayOf(R.drawable.catanger,R.drawable.cateat, R.drawable.cathandsup,
+            R.drawable.catjump, R.drawable.catplay, R.drawable.catsit, R.drawable.catsleep)
 
         val dataList = ArrayList<Model>()
         dataList.add(Model("Phone", 1, arrayOfImages.get(0)))
