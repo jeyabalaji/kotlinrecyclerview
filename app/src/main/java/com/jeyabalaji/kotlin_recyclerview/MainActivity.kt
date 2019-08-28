@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
+        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
 //        Initializing the type of layout, here I have used LinearLayoutManager you can try GridLayoutManager
 //        Based on your requirement to allow vertical or horizontal scroll , you can change it in  LinearLayout.VERTICAL
         recyclerView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)

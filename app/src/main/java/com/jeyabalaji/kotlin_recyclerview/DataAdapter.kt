@@ -8,23 +8,23 @@ import androidx.recyclerview.widget.RecyclerView
 
 class DataAdapter(val userList: ArrayList<Model>) : RecyclerView.Adapter<DataAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
-        val v = LayoutInflater.from(p0?.context).inflate(R.layout.adapter_item_layout, p0, false)
+    override fun onCreateViewHolder(viewGroup: ViewGroup, position: Int): ViewHolder {
+        val v = LayoutInflater.from(viewGroup?.context).inflate(R.layout.adapter_item_layout, viewGroup, false)
         return ViewHolder(v);
     }
     override fun getItemCount(): Int {
         return userList.size
     }
-    override fun onBindViewHolder(p0: ViewHolder, p1: Int) {
+    override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
 
-        p0.name?.text = userList[p1].name
-        p0.count?.text = userList[p1].count.toString()
+        viewHolder.name?.text = userList[position].name
+        viewHolder.count?.text = userList[position].count.toString()
     }
 
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val name = itemView.findViewById<TextView>(R.id.tvName)
-        val count = itemView.findViewById<TextView>(R.id.tvCount)
+        val name = itemView.findViewById<TextView>(R.id.title)
+        val count = itemView.findViewById<TextView>(R.id.count)
 
     }
 }
