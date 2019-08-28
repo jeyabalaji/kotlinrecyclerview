@@ -16,13 +16,19 @@ class MainActivity : AppCompatActivity() {
 
 
         val arrayOfImages = intArrayOf(R.drawable.catanger,R.drawable.cateat, R.drawable.cathandsup,
-            R.drawable.catjump, R.drawable.catplay, R.drawable.catsit, R.drawable.catsleep)
+            R.drawable.catjump, R.drawable.catplay, R.drawable.catrun, R.drawable.catsit,
+            R.drawable.catsleep, R.drawable.catwelcome)
 
         val dataList = ArrayList<Model>()
         dataList.add(Model(arrayOfImages.get(0)))
         dataList.add(Model( arrayOfImages.get(1)))
         dataList.add(Model( arrayOfImages.get(2)))
         dataList.add(Model( arrayOfImages.get(3)))
+        dataList.add(Model( arrayOfImages.get(4)))
+        dataList.add(Model( arrayOfImages.get(5)))
+        dataList.add(Model( arrayOfImages.get(6)))
+        dataList.add(Model( arrayOfImages.get(7)))
+        dataList.add(Model( arrayOfImages.get(8)))
 
         val recyclerViewDataAdapter = DataAdapter(dataList,this)
 
