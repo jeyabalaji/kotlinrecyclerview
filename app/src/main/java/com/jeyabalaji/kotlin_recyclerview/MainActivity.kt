@@ -19,10 +19,10 @@ class MainActivity : AppCompatActivity() {
             R.drawable.catjump, R.drawable.catplay, R.drawable.catsit, R.drawable.catsleep)
 
         val dataList = ArrayList<Model>()
-        dataList.add(Model("Phone", 1, arrayOfImages.get(0)))
-        dataList.add(Model("Watch", 2, arrayOfImages.get(1)))
-        dataList.add(Model("Note", 3, arrayOfImages.get(2)))
-        dataList.add(Model("Pin", 4, arrayOfImages.get(3)))
+        dataList.add(Model(arrayOfImages.get(0)))
+        dataList.add(Model( arrayOfImages.get(1)))
+        dataList.add(Model( arrayOfImages.get(2)))
+        dataList.add(Model( arrayOfImages.get(3)))
 
         val recyclerViewDataAdapter = DataAdapter(dataList,this)
 
