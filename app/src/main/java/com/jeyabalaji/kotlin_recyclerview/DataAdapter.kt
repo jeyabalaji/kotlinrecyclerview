@@ -20,17 +20,11 @@ class DataAdapter(val userList: ArrayList<Model>, context : Context) : RecyclerV
         return userList.size
     }
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-
-        viewHolder.name?.text = userList[position].name
-        viewHolder.count?.text = userList[position].count.toString()
-
         Glide.with(context).load(userList[position].imageId).into(viewHolder.image)
     }
 
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val name = itemView.findViewById<TextView>(R.id.title)
-        val count = itemView.findViewById<TextView>(R.id.count)
         val image = itemView.findViewById<ImageView>(R.id.thumbnail)
 
     }
