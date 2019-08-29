@@ -21,6 +21,13 @@ class DataAdapter(val userList: ArrayList<Model>, context : Context) : RecyclerV
     }
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         Glide.with(context).load(userList[position].imageId).into(viewHolder.image)
+
+        viewHolder.image.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                println("successful")
+                //call media player to play music
+            }
+        })
     }
 
 
