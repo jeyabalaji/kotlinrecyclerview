@@ -1,6 +1,7 @@
 package com.jeyabalaji.kotlin_recyclerview
 
 import android.content.Context
+import android.media.MediaPlayer
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,6 +27,8 @@ class DataAdapter(val userList: ArrayList<Model>, context : Context) : RecyclerV
             override fun onClick(v: View?) {
                 println("successful")
                 //call media player to play music
+                val mediaPlayer = MediaPlayer.create(context, R.raw.soundfile)
+                mediaPlayer.start()
             }
         })
     }
