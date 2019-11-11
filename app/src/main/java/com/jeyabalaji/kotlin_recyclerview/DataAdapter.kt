@@ -2,6 +2,7 @@ package com.jeyabalaji.kotlin_recyclerview
 
 import android.content.Context
 import android.media.MediaPlayer
+import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,10 +28,40 @@ class DataAdapter(val userList: ArrayList<Model>, context : Context) : RecyclerV
             override fun onClick(v: View?) {
                 println("successful")
                 //call media player to play music
-                val mediaPlayer = MediaPlayer.create(context, R.raw.soundfile)
-                mediaPlayer.start()
+                System.out.println("position clickec: "+position)
+
+                val mediaPlayer = buildMediaPlayer(position)
+                if(mediaPlayer!= null && mediaPlayer.isPlaying) {
+                    mediaPlayer.stop()
+                    mediaPlayer.release()
+                } else mediaPlayer?.start()
             }
         })
+    }
+
+    fun buildMediaPlayer(position: Int): MediaPlayer? {
+            if(position.equals(1)) {
+                return MediaPlayer.create(context, R.raw.s9)
+            } else if(position.equals(2)) {
+                return MediaPlayer.create(context, R.raw.s1)
+            } else if(position.equals(3)) {
+                return MediaPlayer.create(context, R.raw.s2)
+            } else if(position.equals(4)) {
+                return MediaPlayer.create(context, R.raw.s3)
+            } else if(position.equals(5)) {
+                return MediaPlayer.create(context, R.raw.s4)
+            } else if(position.equals(6)) {
+                return MediaPlayer.create(context, R.raw.s5)
+            } else if(position.equals(7)) {
+                return MediaPlayer.create(context, R.raw.s6)
+            } else if(position.equals(8)) {
+                return MediaPlayer.create(context, R.raw.s7)
+            } else if(position.equals(9)) {
+                return MediaPlayer.create(context, R.raw.s8)
+            } else if(position.equals(0)) {
+                return MediaPlayer.create(context, R.raw.s12)
+            }
+        return null
     }
 
 
